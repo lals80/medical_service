@@ -23,14 +23,15 @@ export default function SignUpForm() {
         <div>
           <div className="mb-5 sm:mb-8">
             <h1 className="mb-2 text-title-sm font-semibold text-gray-800 sm:text-title-md dark:text-white/90">
-              Sign Up
+              회원가입
             </h1>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Enter your email and password to sign up!
+              이메일과 비밀번호를 입력하여 가입하세요!
             </p>
           </div>
           <div>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5">
+            {/* SNS 회원가입 비활성화 */}
+            {/* <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5">
               <button className="inline-flex items-center justify-center gap-3 rounded-lg bg-gray-100 px-7 py-3 text-sm font-normal text-gray-700 transition-colors hover:bg-gray-200 hover:text-gray-800 dark:bg-white/5 dark:text-white/90 dark:hover:bg-white/10">
                 <svg
                   width="20"
@@ -81,55 +82,41 @@ export default function SignUpForm() {
                   Or
                 </span>
               </div>
-            </div>
+            </div> */}
             <form>
               <div className="space-y-5">
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                  {/* <!-- First Name --> */}
-                  <div className="sm:col-span-1">
-                    <Label>
-                      First Name<span className="text-error-500">*</span>
-                    </Label>
-                    <Input
-                      type="text"
-                      id="fname"
-                      name="fname"
-                      placeholder="Enter your first name"
-                    />
-                  </div>
-                  {/* <!-- Last Name --> */}
-                  <div className="sm:col-span-1">
-                    <Label>
-                      Last Name<span className="text-error-500">*</span>
-                    </Label>
-                    <Input
-                      type="text"
-                      id="lname"
-                      name="lname"
-                      placeholder="Enter your last name"
-                    />
-                  </div>
+                {/* <!-- Name --> */}
+                <div className="sm:col-span-1">
+                  <Label>
+                    이름<span className="text-error-500">*</span>
+                  </Label>
+                  <Input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="이름을 입력해주세요"
+                  />
                 </div>
                 {/* <!-- Email --> */}
                 <div>
                   <Label>
-                    Email<span className="text-error-500">*</span>
+                    이메일<span className="text-error-500">*</span>
                   </Label>
                   <Input
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="Enter your email"
+                    placeholder="이메일을 입력해주세요"
                   />
                 </div>
                 {/* <!-- Password --> */}
                 <div>
                   <Label>
-                    Password<span className="text-error-500">*</span>
+                    비밀번호<span className="text-error-500">*</span>
                   </Label>
                   <div className="relative">
                     <Input
-                      placeholder="Enter your password"
+                      placeholder="비밀번호를 입력해주세요"
                       type={showPassword ? "text" : "password"}
                     />
                     <span
@@ -152,20 +139,21 @@ export default function SignUpForm() {
                     onChange={setIsChecked}
                   />
                   <p className="inline-block font-normal text-gray-500 dark:text-gray-400">
-                    By creating an account means you agree to the{" "}
+                    계정을 생성하면{" "}
                     <span className="text-gray-800 dark:text-white/90">
-                      Terms and Conditions,
+                      이용 약관
                     </span>{" "}
-                    and our{" "}
+                    및{" "}
                     <span className="text-gray-800 dark:text-white">
-                      Privacy Policy
+                      개인정보 처리방침
                     </span>
+                    에 동의하는 것으로 간주됩니다.
                   </p>
                 </div>
                 {/* <!-- Button --> */}
                 <div>
                   <button className="flex w-full items-center justify-center rounded-lg bg-brand-500 px-4 py-3 text-sm font-medium text-white shadow-theme-xs transition hover:bg-brand-600">
-                    Sign Up
+                    가입하기
                   </button>
                 </div>
               </div>
@@ -173,12 +161,12 @@ export default function SignUpForm() {
 
             <div className="mt-5">
               <p className="text-center text-sm font-normal text-gray-700 sm:text-start dark:text-gray-400">
-                Already have an account?{" "}
+                이미 계정이 있으신가요?{" "}
                 <Link
                   to="/signin"
                   className="text-brand-500 hover:text-brand-600 dark:text-brand-400"
                 >
-                  Sign In
+                  로그인
                 </Link>
               </p>
             </div>

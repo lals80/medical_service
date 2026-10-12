@@ -26,8 +26,11 @@ export default function AuthLayout({
                 />
               </Link>
 
+              <p className="text-center text-white dark:text-[#AFC6F7] text-4xl mb-4">
+                더 건강한<br/>내일을 위한 시작
+              </p>
               <p className="text-center text-gray-400 dark:text-white/60">
-                Free and Open-Source Tailwind CSS Admin Dashboard Template
+                MediCare와 함께<br/>간편하게 진료예약하고,<br/>건강을 관리하세요.
               </p>
             </div>
           </div>

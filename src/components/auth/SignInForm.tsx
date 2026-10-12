@@ -24,14 +24,15 @@ export default function SignInForm() {
         <div>
           <div className="mb-5 sm:mb-8">
             <h1 className="mb-2 text-title-sm font-semibold text-gray-800 sm:text-title-md dark:text-white/90">
-              Sign In
+              로그인
             </h1>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Enter your email and password to sign in!
+              아이디와 비밀번호를 입력해주세요.
             </p>
           </div>
           <div>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5">
+            {/* SNS 로그인 비활성화 */}
+            {/* <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5">
               <button className="inline-flex items-center justify-center gap-3 rounded-lg bg-gray-100 px-7 py-3 text-sm font-normal text-gray-700 transition-colors hover:bg-gray-200 hover:text-gray-800 dark:bg-white/5 dark:text-white/90 dark:hover:bg-white/10">
                 <svg
                   width="20"
@@ -72,8 +73,8 @@ export default function SignInForm() {
                 </svg>
                 Sign in with X
               </button>
-            </div>
-            <div className="relative py-3 sm:py-5">
+            </div> */}
+            {/* <div className="relative py-3 sm:py-5">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-200 dark:border-gray-800"></div>
               </div>
@@ -82,23 +83,23 @@ export default function SignInForm() {
                   Or
                 </span>
               </div>
-            </div>
+            </div> */}
             <form>
               <div className="space-y-6">
                 <div>
                   <Label>
-                    Email <span className="text-error-500">*</span>{" "}
+                    아이디 <span className="text-error-500">*</span>{" "}
                   </Label>
                   <Input placeholder="info@gmail.com" />
                 </div>
                 <div>
                   <Label>
-                    Password <span className="text-error-500">*</span>{" "}
+                    비밀번호 <span className="text-error-500">*</span>{" "}
                   </Label>
                   <div className="relative">
                     <Input
                       type={showPassword ? "text" : "password"}
-                      placeholder="Enter your password"
+                      placeholder="비밀번호를 입력해주세요"
                     />
                     <span
                       onClick={() => setShowPassword(!showPassword)}
@@ -116,19 +117,19 @@ export default function SignInForm() {
                   <div className="flex items-center gap-3">
                     <Checkbox checked={isChecked} onChange={setIsChecked} />
                     <span className="block text-theme-sm font-normal text-gray-700 dark:text-gray-400">
-                      Keep me logged in
+                      로그인 상태 유지
                     </span>
                   </div>
                   <Link
                     to="/reset-password"
                     className="text-sm text-brand-500 hover:text-brand-600 dark:text-brand-400"
                   >
-                    Forgot password?
+                    비밀번호 찾기
                   </Link>
                 </div>
                 <div>
                   <Button className="w-full" size="sm">
-                    Sign in
+                    로그인
                   </Button>
                 </div>
               </div>
@@ -136,12 +137,12 @@ export default function SignInForm() {
 
             <div className="mt-5">
               <p className="text-center text-sm font-normal text-gray-700 sm:text-start dark:text-gray-400">
-                Don&apos;t have an account? {""}
+                아이디가 없으신가요? {""}
                 <Link
                   to="/signup"
                   className="text-brand-500 hover:text-brand-600 dark:text-brand-400"
                 >
-                  Sign Up
+                  회원가입
                 </Link>
               </p>
             </div>
